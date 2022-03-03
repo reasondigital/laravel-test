@@ -54,4 +54,6 @@ The test suite can be found in the `/tests` directory. Currently, there are two 
 
 To run the test suite `ddev ssh` and then run `vendor/bin/phpunit`.
 
-See the @todos for the tests that need to be fixed. 
+See the @todos for the tests that need to be fixed.
+
+NOTE: If you have database structures you need in the test database you can add `--env=testing` on any command to run them against the test database. This works for running migrations.
