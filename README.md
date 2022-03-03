@@ -1,64 +1,57 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# Reason Digital PDT test
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## About this test
+Hello - Welcome to our Technical Task!
 
-## About Laravel
+There is no 'right' or 'wrong' answer to this task; we use this it determine your familiarity with some of the tech we use, and how you go about architecting and writing code. As such we’d like you to write code to standard you’d be happy with, but not to feel under pressure to make it ‘perfect.’
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+For Junior roles we expect you to be able to attempt everything in the ‘Things we are Looking for' section. For Mid and Senior roles we expect to see you also add at least some of the 'Things that Would be Nice'
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+There is no time limit as such, but we'd appreciate it if you could respond within the **next three days**. If this will not be possible then please let us know when we can expect a response.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Requirements
+Create a Laravel based API in PHP that does the following:
 
-## Learning Laravel
+- Has endpoints for getting the weather from the [https://www.weatherapi.com/](https://www.weatherapi.com/) API – with parameters to select a location     
+- Secure the endpoint using username / password authentication (need login endpoints)     
+- Use JWT tokens for authentication     
+- Upload to a code repository and send us a link
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### Things we are looking for
+- We are looking for how you architect the code and how you choose to write it.
+- We are looking for clean, readable code.
+- We are looking for code comments that show your thinking.
+- We are looking for best practice following SOLID and DRY principles.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Things that would be nice
+- You can deploy it to a free PHP host and send Postman information.
+- You can add HAL links to the API.
+- PHP Unit tests for the endpoints.
+- Demonstration of advanced knowledge of Laravel.
 
-## Laravel Sponsors
+As stated in the introduction - there isn’t one single ‘right’ solution that we are looking for. This task is set up to assess your skills and to give us an insight into your working process.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+Please submit code that you would be proud to share and think accurately represents your method and coding quality.
 
-### Premium Partners
+We will chat over your solution at interview. As well as the output of the exercise we are also interested in your reflections on it - so please don’t let perfect be the enemy of done!
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+Please let us know if anything is unclear, or if you have any further questions by responding directly to the email this was attached to
 
-## Contributing
+## Local set up
+For local development we use [DDEV](https://ddev.readthedocs.io/en/stable/).
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### Creating the environment
+The first step is to run `ddev start` which will create the environment.
 
-## Code of Conduct
+Laravel uses `.env` files to store its configuration. Copy the `.env.example` to `.env`. The example has everything you need to get up and running with a database.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Next you'll need to set an application key for Laravel. To do this run `ddev ssh` to gain access to the web container. Then run `php artisan key:generate` to generate the key. This will be written to your `.env` file.
 
-## Security Vulnerabilities
+NOTE: You can run any command outside of the container using the `ddev exec` command followed by the command you want to run.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### Running tests
+The test suite can be found in the `/tests` directory. Currently, there are two working tests and several broken ones.
 
-## License
+To run the test suite `ddev ssh` and then run `vendor/bin/phpunit`.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+See the @todos for the tests that need to be fixed. 
