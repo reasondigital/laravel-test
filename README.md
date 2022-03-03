@@ -38,7 +38,7 @@ We will chat over your solution at interview. As well as the output of the exerc
 Please let us know if anything is unclear, or if you have any further questions by responding directly to the email this was attached to
 
 ## Local set up
-For local development we use [DDEV](https://ddev.readthedocs.io/en/stable/).
+For local development we use [DDEV](https://ddev.readthedocs.io/en/stable/). The instructions below are for getting setup. If you want to use something else that's fine.
 
 ### Creating the environment
 The first step is to run `ddev start` which will create the environment.
